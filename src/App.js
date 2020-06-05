@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/index.css'
+import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
+  document.body.style.backgroundColor = '$primary-color';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="App-container">
+          <div className="card card-container">
+            <h1>Temperature and Weight Calculator</h1>
+            <div className="card">
+              <a href="temperature.js">Calculate Temperature</a>
+              <a href="weight.js">Calculate Weight</a>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
