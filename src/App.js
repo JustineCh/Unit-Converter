@@ -1,23 +1,29 @@
 import React from 'react';
-import './styles/index.css'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from './pages/Home';
+import Temp from './pages/Temp';
+import Weight from './pages/Weight';
+import './styles/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
-  document.body.style.backgroundColor = '$primary-color';
+  // document.body.style.backgroundColor = '$primary-color';
 
   return (
-    <div className="App">
-        <div className="App-container">
-          <div className="card card-container">
-            <h1>Temperature and Weight Calculator</h1>
-            <div className="card">
-              <a href="temperature.js">Calculate Temperature</a>
-              <a href="weight.js">Calculate Weight</a>
+    <Router>
+      <div className="app">
+          <div className="app-container">
+            <div className="card card-container">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/temp" component={Temp} />
+                <Route exact path="/weight" component={Weight} />
+              </Switch>
             </div>
           </div>
-        </div>
-    </div>
+      </div>
+    </Router>
   );
 }
 
