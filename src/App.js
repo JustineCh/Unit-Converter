@@ -12,16 +12,12 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
-          <div className="app-container">
-            <div className="card card-container">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/temp" component={Temp} />
-                <Route exact path="/weight" component={Weight} />
-              </Switch>
-            </div>
-          </div>
+      <div className="card card-container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/temp" component={Temp} />
+          <Route exact path="/weight" component={Weight} />
+        </Switch>
       </div>
     </Router>
   );

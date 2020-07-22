@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
+import Navbar from '../layout/Navbar';
 
 function Weight() {
    return (
       <Fragment>
-         <h1 className="card-header">Helloo1!</h1>
+         <Navbar title={'Weight Converter'}/>
          
       </Fragment>
    )

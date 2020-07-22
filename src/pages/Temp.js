@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import Navbar from '../layout/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,10 +7,10 @@ import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 function Temp() {
    return (
       <Fragment>
-         <div className="card-header navbar">Temperature Converter</div>
+         <Navbar className="card-header navbar" title={'Temperature Converter'} />
          <div className="card-body">
             <div className="d-flex items-container justify-content-around">
-               <button className="btn btn-primary"><sup>o</sup>C</button>
+               <div className="btn-unit btn-primary-color"><sup>o</sup>C</div>
                <button className="btn btn-border-primary">{<FontAwesomeIcon icon={faArrowsAltH} size="lg"/>}</button>
                <button className="btn btn-primary"><sup>o</sup>F</button>
             </div>
