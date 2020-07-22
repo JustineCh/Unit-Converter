@@ -1,0 +1,1 @@
+export const CALC_FARENHEIT = 'CALC_FARENHEIT';

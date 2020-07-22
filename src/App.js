@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from './pages/Home';
-import Temp from './pages/Temp';
-import Weight from './pages/Weight';
+import Home from './components/pages/Home';
+import Temp from './components/pages/Temp';
+import Weight from './components/pages/Weight';
 import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
