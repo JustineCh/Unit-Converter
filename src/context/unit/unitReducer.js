@@ -1,13 +1,13 @@
-// import {
-//    CALC_FARENHEIT
-// } from '../types';
+import {
+   CALC_FARENHEIT
+} from '../types';
 
-// export default (state, action) => {
-//    switch(action.type) {
-//       case CALC_FARENHEIT:
-//          return {
-//             ...state,
-//             farenheitVal: action.payload
-//          }
-//    }
-// }
+export default (state, action) => {
+   switch(action.type) {
+      case CALC_FARENHEIT:
+         return {
+            ...state,
+            farenheitVal: action.payload
+         }
+   }
+}

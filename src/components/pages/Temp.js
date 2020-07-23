@@ -1,11 +1,15 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState, useContext} from 'react';
 import Navbar from '../layout/Navbar';
 import Celsius from '../layout/Celsius';
+import UnitContext from '../../context/unit/unitContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 
 
 function Temp() {
+   const unitContext = useContext(UnitContext);
+   const {farenheitVal} = unitContext;
+
    return (
       <Fragment>
          <Navbar className="card-header navbar" title={'Temperature Converter'} />
@@ -19,7 +23,7 @@ function Temp() {
                {/* <input type="number" name="celsius" id="celsius" placeholder="Enter the value..." className=""/> */}
                <Celsius />
                <button className="btn btn-primary">RUN</button>
-               <input type="number" name="farenheit" id="farenheit" placeholder="Enter the value..." className=""/>
+               <input  name="farenheit" id="farenheit" placeholder="Enter the value..." value={farenheitVal} className=""/>
             </div>
          </div>
       </Fragment>

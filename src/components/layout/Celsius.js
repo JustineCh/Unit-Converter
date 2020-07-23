@@ -2,21 +2,24 @@ import React, {useState, useContext} from 'react';
 import UnitContext from '../../context/unit/unitContext';
 
 function Celsius() {
-   // const unitContext = useContext(UnitContext);
-   const [celsiusValue, setCelsiusValue] = useState("");
+   const unitContext = useContext(UnitContext);
+   const [celsiusVal, setCelsiusVal] = useState("");
 
 
-   const onChange = e => setCelsiusValue(e.target.value);
+   const onChange = e => {
+      setCelsiusVal(e.target.value);
+      unitContext.calcFarenheit(celsiusVal);
+   };
 
 
    return (
       <div>
          <form className="form">
             <input
-               type="number"
-               name="clesius"
+               // type="number"
+               name="celsius"
                placeholder="Enter the value..."
-               value={celsiusValue}
+               value={celsiusVal}
                onChange={onChange}
             />
         </form>
