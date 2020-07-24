@@ -1,25 +1,27 @@
 import React, {Fragment, useContext} from 'react';
 import UnitContext from '../../context/unit/unitContext';
 
-function Celsius() {
+function Farenheit() {
    const unitContext = useContext(UnitContext);
-   const {celsiusVal} = unitContext;
+   const {farenheitVal} = unitContext;
 
+ 
    const onChange = e => {
-      unitContext.calcFarenheit(e.target.value);
+      unitContext.calcCelsius(e.target.value);
    };
+
 
    return (
       <Fragment>
             <input
                type="number"
-               name="celsius"
+               name="farenheit"
                placeholder="Enter the value..."
-               value={celsiusVal}
+               value={farenheitVal}
                onChange={onChange}
             />
       </Fragment>
    )
 }
 
-export default Celsius;
+export default Farenheit;

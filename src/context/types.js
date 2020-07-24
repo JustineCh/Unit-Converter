@@ -1,1 +1,2 @@
 export const CALC_FARENHEIT = 'CALC_FARENHEIT';
+export const CALC_CELSIUS = 'CALC_CELSIUS';

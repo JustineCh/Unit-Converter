@@ -1,14 +1,17 @@
 import React, {useReducer} from 'react';
 import UnitContext from './unitContext';
 import UnitReducer from './unitReducer';
+import { faArrowRight, faArrowLeft, faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import {
-   CALC_FARENHEIT
+   CALC_FARENHEIT,
+   CALC_CELSIUS
 } from '../types';
 
 const UnitState = props => {
    const initialState = {
       celsiusVal: '',
-      farenheitVal: ''
+      farenheitVal: '',
+      arrow: faArrowsAltH
    }
 
    const [state, dispatch] = useReducer(UnitReducer, initialState);
@@ -16,18 +19,30 @@ const UnitState = props => {
    const calcFarenheit = (celsiusVal) => {
       dispatch({
          type: CALC_FARENHEIT,
-         payload: ((celsiusVal * 9 / 5) - 32).toString()
+         payload: {
+            farenheit: ((celsiusVal * 9 / 5) - 32).toString(),
+            celsius: celsiusVal,
+            arrow: faArrowRight
+         }
       })
    }
 
    const calcCelsius = (farenheitVal) => {
-      return (farenheitVal - 32) * 5 / 9;
+      dispatch({
+         type: CALC_CELSIUS,
+         payload: {
+            farenheit: farenheitVal,
+            celsius: ((farenheitVal - 32) * 5 / 9).toString(),
+            arrow: faArrowLeft
+         }
+      })
    }
 
    return <UnitContext.Provider
       value={{
          celsiusVal: state.celsiusVal,
          farenheitVal: state.farenheitVal,
+         arrow: state.arrow,
          calcCelsius,
          calcFarenheit
       }}
