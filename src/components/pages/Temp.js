@@ -16,7 +16,7 @@ function Temp() {
             <form className="">
                <label className="btn-unit btn-primary-color"><sup>o</sup>C</label>
                <Celsius />
-               <div className="btn btn-border-primary m-2">{<FontAwesomeIcon icon={arrow} size="lg"/>}</div>
+               <div className="btn btn-border btn-border-primary m-2">{<FontAwesomeIcon icon={arrow} size="lg"/>}</div>
                <label className="btn-unit btn-primary-color"><sup>o</sup>F</label>
                <Farenheit />
             </form>

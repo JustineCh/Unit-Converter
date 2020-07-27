@@ -4,13 +4,17 @@ import UnitReducer from './unitReducer';
 import { faArrowRight, faArrowLeft, faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import {
    CALC_FARENHEIT,
-   CALC_CELSIUS
+   CALC_CELSIUS,
+   CALC_LBS,
+   CALC_KG
 } from '../types';
 
 const UnitState = props => {
    const initialState = {
       celsiusVal: '',
       farenheitVal: '',
+      kgVal: '',
+      lbsVal: '',
       arrow: faArrowsAltH
    }
 
@@ -38,13 +42,39 @@ const UnitState = props => {
       })
    }
 
+   const calcLbs = (kgVal) => {
+      dispatch({
+         type: CALC_LBS,
+         payload: {
+            kg: kgVal,
+            lbs: (kgVal * 2.20462).toString(),
+            arrow: faArrowLeft
+         }
+      })
+   }
+
+   const calcKg = (lbsVal) => {
+      dispatch({
+         type: CALC_KG,
+         payload: {
+            lbs: lbsVal,
+            kg: (lbsVal / 2.20462).toString(),
+            arrow: faArrowLeft
+         }
+      })
+   }
+
    return <UnitContext.Provider
       value={{
          celsiusVal: state.celsiusVal,
          farenheitVal: state.farenheitVal,
          arrow: state.arrow,
+         kgVal: state.kgVal,
+         lbsVal: state.lbsVal,
          calcCelsius,
-         calcFarenheit
+         calcFarenheit,
+         calcLbs,
+         calcKg
       }}
       >
       {props.children}

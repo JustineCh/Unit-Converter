@@ -32,10 +32,10 @@ body {
   color: #4d4d4d;
   font-size: 1.3rem;
   font-weight: 500;
-  padding: 0.4rem 1.3rem;
+  padding: 0.4rem 1rem;
   font-size: 1rem;
   border: none;
-  margin: 0px 5px;
+  margin: 0px 5px 0px 0px;
   border-radius: 5px;
 }
 
@@ -69,11 +69,19 @@ body {
   background-color: var(--teritiary-color-hover);
 }
 
-.btn-border-primary {
+.btn-border {
   background-color: transparent;
   border: var(--primary-color) 2px solid;
   color: #4d4d4d;
   cursor: default !important;
+}
+
+.btn-border-primary {
+  border: var(--primary-color) 2px solid;
+}
+
+.btn-border-secondary {
+  border: var(--secondary-color) 2px solid;
 }
 
 .items-container {
