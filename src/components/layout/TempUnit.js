@@ -9,9 +9,9 @@ function TempUnit({inputType}) {
    const onChange = e => {
       if(inputType === 'celsius') {
          unitContext.calcFarenheit(e.target.value);
-      } else {
+      } else if(inputType === 'farenheit') {
          unitContext.calcCelsius(e.target.value);
-      } 
+      }
    };
 
    return (

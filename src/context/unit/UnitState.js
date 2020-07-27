@@ -21,25 +21,47 @@ const UnitState = props => {
    const [state, dispatch] = useReducer(UnitReducer, initialState);
 
    const calcFarenheit = (celsiusVal) => {
-      dispatch({
-         type: CALC_FARENHEIT,
-         payload: {
-            farenheit: ((celsiusVal * 9 / 5) + 32).toString(),
-            celsius: celsiusVal,
-            arrow: faArrowRight
-         }
-      })
+      if(celsiusVal === ''){
+         dispatch({
+            type: CALC_FARENHEIT,
+            payload: {
+               farenheit: '',
+               celsius: '',
+               arrow: faArrowsAltH
+            }
+         })
+      } else {
+         dispatch({
+            type: CALC_FARENHEIT,
+            payload: {
+               farenheit: ((celsiusVal * 9 / 5) + 32).toString(),
+               celsius: celsiusVal,
+               arrow: faArrowRight
+            }
+         })
+      }
    }
 
    const calcCelsius = (farenheitVal) => {
-      dispatch({
-         type: CALC_CELSIUS,
-         payload: {
-            farenheit: farenheitVal,
-            celsius: ((farenheitVal - 32) * 5 / 9).toString(),
-            arrow: faArrowLeft
-         }
-      })
+      if(farenheitVal === ''){
+         dispatch({
+            type: CALC_CELSIUS,
+            payload: {
+               farenheit: '',
+               celsius: '',
+               arrow: faArrowsAltH
+            }
+         })
+      } else {
+         dispatch({
+            type: CALC_CELSIUS,
+            payload: {
+               farenheit: farenheitVal,
+               celsius: ((farenheitVal - 32) * 5 / 9).toString(),
+               arrow: faArrowLeft
+            }
+         })
+      }
    }
 
    const calcLbs = (kgVal) => {
