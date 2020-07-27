@@ -5,17 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-function Navbar(props) {
+function Navbar({iconClass, title}) {
    return (
-      <div className="card-header d-flex flex-row align-items-center">
-         <Link to={"/"} className="back-icon" ><FontAwesomeIcon icon={faChevronCircleLeft} size="2x" /></Link>
-         <h2 className="">{props.title}</h2>
+      <div className="card-header navbar-div d-flex flex-row justify-content-between align-items-center mt-2 mb-2">
+         <Link to={"/"} className={iconClass} ><FontAwesomeIcon icon={faChevronCircleLeft} size="3x" /></Link>
+         <p className="navbar-name">{title}</p>
       </div>
    )
 }
 
 Navbar.propTypes = {
    title: PropTypes.string.isRequired,
+   iconClass: PropTypes.string.isRequired,
  };
 
 export default Navbar;

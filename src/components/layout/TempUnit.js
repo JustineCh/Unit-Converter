@@ -1,4 +1,5 @@
 import React, {Fragment, useContext} from 'react';
+import PropTypes from "prop-types";
 import UnitContext from '../../context/unit/unitContext';
 
 function TempUnit({inputType}) {
@@ -25,5 +26,9 @@ function TempUnit({inputType}) {
       </Fragment>
    )
 }
+
+TempUnit.propTypes = {
+   inputType: PropTypes.string.isRequired,
+ };
 
 export default TempUnit;

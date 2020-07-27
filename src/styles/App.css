@@ -1,6 +1,11 @@
 :root {
   --dark-color: #282c34;
-  --primary-color: #75d3f0;
+  --primary-color: #e8b0dc;
+  --primary-color-hover: #dc89ca;
+  --secondary-color: #ccccff;
+  --secondary-color-hover: #9999ff;
+  --teritiary-color: #ffffb3;
+  --teritiary-color-hover: #ffff80;
 }
 
 * {
@@ -9,6 +14,7 @@
 
 body {
   background-color: var(--dark-color);
+  color: #4d4d4d;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   height: 100vh;
@@ -23,11 +29,13 @@ body {
 
 .btn-unit {
   display: inline-block;
-  color: #333;
+  color: #4d4d4d;
+  font-size: 1.3rem;
+  font-weight: 500;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
-  margin: 2px;
+  margin: 0px 5px;
   border-radius: 5px;
 }
 
@@ -41,14 +49,78 @@ body {
   background-color: var(--primary-color);
 }
 
+.btn-primary-color:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.btn-secondary-color {
+  background-color: var(--secondary-color);
+}
+
+.btn-secondary-color:hover {
+  background-color: var(--secondary-color-hover);
+}
+
+.btn-teritiary-color {
+  background-color: var(--teritiary-color);
+}
+
+.btn-teritiary-color:hover {
+  background-color: var(--teritiary-color-hover);
+}
+
 .btn-border-primary {
   background-color: transparent;
-  border: #75d3f0 2px solid;
-  /* color: var(--primary-color); */
+  border: var(--primary-color) 2px solid;
+  color: #4d4d4d;
+  cursor: default !important;
 }
 
 .items-container {
   width: 100%;
   margin: auto;
   padding: 20px 20px;
+}
+
+.navbar-name {
+  font-size: 2rem;
+  margin: 0;
+  margin-right: 30px;
+  color: #4d4d4d
+}
+
+.back-icon-primary {
+  color: var(--primary-color);
+}
+
+.back-icon-primary:hover{
+  color: var(--primary-color-hover);
+}
+
+.back-icon-secondary {
+  color: var(--secondary-color);
+}
+
+.back-icon-secondary:hover{
+  color: var(--secondary-color-hover);
+}
+
+.back-icon-teritiary {
+  color: var(--teritiary-color);
+}
+
+.back-icon-teritiary:hover{
+  color: var(--teritiary-color-hover);
+}
+
+.navbar-div {
+  background: inherit;
+}
+
+.main-navbar {
+  font-size: 3rem;
+  /* background: repeating-radial-gradient(#975797, #f1cdf1); */
+  background: -webkit-linear-gradient(#f18ee1, #660066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

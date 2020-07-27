@@ -4,7 +4,7 @@ import Navbar from '../layout/Navbar';
 function Weight() {
    return (
       <Fragment>
-         <Navbar title={'Weight Converter'}/>
+         <Navbar title={'Weight Converter'} iconClass={'back-icon-secondary'}/>
          
       </Fragment>
    )

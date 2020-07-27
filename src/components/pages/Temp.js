@@ -11,12 +11,12 @@ function Temp() {
 
    return (
       <Fragment>
-         <Navbar className="card-header navbar" title={'Temperature Converter'} />
-         <div className="card-body">
+         <Navbar className="card-header navbar navbar-primary" title={'Temperature Converter'} iconClass={'back-icon-primary'}/>
+         <div className="card-body mt-3">
             <form className="">
                <label className="btn-unit btn-primary-color"><sup>o</sup>C</label>
                <Celsius />
-               <button className="btn btn-border-primary m-2">{<FontAwesomeIcon icon={arrow} size="lg"/>}</button>
+               <div className="btn btn-border-primary m-2">{<FontAwesomeIcon icon={arrow} size="lg"/>}</div>
                <label className="btn-unit btn-primary-color"><sup>o</sup>F</label>
                <Farenheit />
             </form>

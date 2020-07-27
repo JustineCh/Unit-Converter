@@ -20,7 +20,7 @@ const UnitState = props => {
       dispatch({
          type: CALC_FARENHEIT,
          payload: {
-            farenheit: ((celsiusVal * 9 / 5) - 32).toString(),
+            farenheit: ((celsiusVal * 9 / 5) + 32).toString(),
             celsius: celsiusVal,
             arrow: faArrowRight
          }

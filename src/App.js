@@ -4,7 +4,6 @@ import Home from './components/pages/Home';
 import Temp from './components/pages/Temp';
 import Weight from './components/pages/Weight';
 import Currency from './components/pages/Currency';
-import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 import UnitState from './context/unit/UnitState';
