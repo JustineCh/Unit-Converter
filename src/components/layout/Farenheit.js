@@ -1,27 +1,8 @@
-import React, {Fragment, useContext} from 'react';
-import UnitContext from '../../context/unit/unitContext';
+import React from 'react';
+import TempUnit from '../layout/TempUnit';
 
 function Farenheit() {
-   const unitContext = useContext(UnitContext);
-   const {farenheitVal} = unitContext;
-
- 
-   const onChange = e => {
-      unitContext.calcCelsius(e.target.value);
-   };
-
-
-   return (
-      <Fragment>
-            <input
-               type="number"
-               name="farenheit"
-               placeholder="Enter the value..."
-               value={farenheitVal}
-               onChange={onChange}
-            />
-      </Fragment>
-   )
+  return <TempUnit inputType={'farenheit'} />
 }
 
 export default Farenheit;
