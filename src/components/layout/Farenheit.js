@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Unit from '../layout/Unit';
+import UnitContext from '../../context/unit/unitContext';
 
 function Farenheit() {
-  return <Unit inputType={'farenheit'} />
+  const unitContext = useContext(UnitContext);
+  const {val2} = unitContext;
+  
+  return <Unit inputType={'farenheit'} value={val2}/>
 }
 
 export default Farenheit;

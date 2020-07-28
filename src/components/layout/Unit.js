@@ -2,15 +2,15 @@ import React, {Fragment, useContext} from 'react';
 import PropTypes from "prop-types";
 import UnitContext from '../../context/unit/unitContext';
 
-function Unit({inputType}) {
+function Unit({inputType, value}) {
    const unitContext = useContext(UnitContext);
    const {val1, val2} = unitContext;
 
    const onChange = e => {
-      if(inputType === 'celsius') {
-         unitContext.calcFarenheit(e.target.value);
-      } else if(inputType === 'farenheit') {
-         unitContext.calcCelsius(e.target.value);
+      if(value === val1 && inputType === 'celsius') {
+         unitContext.calcVal2(e.target.value);
+      } else if(value === val2 && inputType === 'farenheit') {
+         unitContext.calcVal1(e.target.value);
       } else if(inputType === 'kilogram') {
          unitContext.calcLbs(e.target.value);
       } else if(inputType === 'pound') {
@@ -24,7 +24,7 @@ function Unit({inputType}) {
                type="number"
                name={inputType}
                placeholder="Enter the value..."
-               value={inputType === 'celsius' || inputType === 'kilogram' ? val1 : val2}
+               value={value}
                onChange={onChange}
             />
       </Fragment>

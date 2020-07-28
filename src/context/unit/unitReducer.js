@@ -1,25 +1,17 @@
 import {
-   CALC_FARENHEIT, 
-   CALC_CELSIUS,
+   CALC_TEMP,
    CALC_LBS,
    CALC_KG
 } from '../types';
 
 export default (state, action) => {
    switch(action.type) {
-      case CALC_FARENHEIT:
+      case CALC_TEMP:
          return {
             ...state,
             arrow: action.payload.arrow,
             val1: action.payload.celsius,
             val2: action.payload.farenheit
-         }
-      case CALC_CELSIUS:
-         return {
-            ...state,
-            arrow: action.payload.arrow,
-            val2: action.payload.farenheit,
-            val1: action.payload.celsius
          }
       case CALC_LBS:
       return {

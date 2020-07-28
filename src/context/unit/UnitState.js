@@ -3,8 +3,7 @@ import UnitContext from './unitContext';
 import UnitReducer from './unitReducer';
 import { faArrowRight, faArrowLeft, faArrowsAltH } from '@fortawesome/free-solid-svg-icons';
 import {
-   CALC_FARENHEIT,
-   CALC_CELSIUS,
+   CALC_TEMP,
    CALC_LBS,
    CALC_KG
 } from '../types';
@@ -18,10 +17,10 @@ const UnitState = props => {
 
    const [state, dispatch] = useReducer(UnitReducer, initialState);
 
-   const calcFarenheit = (val1) => {
+   const calcVal2 = (val1) => {
       if(val1 === ''){
          dispatch({
-            type: CALC_FARENHEIT,
+            type: CALC_TEMP,
             payload: {
                farenheit: '',
                celsius: '',
@@ -30,7 +29,7 @@ const UnitState = props => {
          })
       } else {
          dispatch({
-            type: CALC_FARENHEIT,
+            type: CALC_TEMP,
             payload: {
                farenheit: ((val1 * 9 / 5) + 32).toString(),
                celsius: val1,
@@ -40,10 +39,10 @@ const UnitState = props => {
       }
    }
 
-   const calcCelsius = (val2) => {
+   const calcVal1 = (val2) => {
       if(val2 === ''){
          dispatch({
-            type: CALC_CELSIUS,
+            type: CALC_TEMP,
             payload: {
                farenheit: '',
                celsius: '',
@@ -52,7 +51,7 @@ const UnitState = props => {
          })
       } else {
          dispatch({
-            type: CALC_CELSIUS,
+            type: CALC_TEMP,
             payload: {
                farenheit: val2,
                celsius: ((val2 - 32) * 5 / 9).toString(),
@@ -111,8 +110,8 @@ const UnitState = props => {
          arrow: state.arrow,
          val1: state.val1,
          val2: state.val2,
-         calcCelsius,
-         calcFarenheit,
+         calcVal1,
+         calcVal2,
          calcLbs,
          calcKg
       }}
