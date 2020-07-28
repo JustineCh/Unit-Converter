@@ -1,8 +1,8 @@
 import React from 'react';
-import TempUnit from '../layout/TempUnit';
+import Unit from '../layout/Unit';
 
 function Celsius() {
-   return <TempUnit inputType={'celsius'} />
+   return <Unit inputType={'celsius'} />
 }
 
 export default Celsius;

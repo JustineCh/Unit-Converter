@@ -1,8 +1,8 @@
 import React from 'react';
-import TempUnit from '../layout/TempUnit';
+import Unit from '../layout/Unit';
 
 function Farenheit() {
-  return <TempUnit inputType={'farenheit'} />
+  return <Unit inputType={'farenheit'} />
 }
 
 export default Farenheit;

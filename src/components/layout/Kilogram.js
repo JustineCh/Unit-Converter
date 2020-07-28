@@ -1,8 +1,8 @@
 import React from 'react';
-import WeightUnit from '../layout/WeightUnit';
+import Unit from '../layout/Unit';
 
 function Kilogram() {
-   return <WeightUnit inputType={'kilogram'} />
+   return <Unit inputType={'kilogram'} />
 }
 
 export default Kilogram;

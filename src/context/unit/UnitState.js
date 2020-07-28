@@ -11,17 +11,15 @@ import {
 
 const UnitState = props => {
    const initialState = {
-      celsiusVal: '',
-      farenheitVal: '',
-      kgVal: '',
-      lbsVal: '',
+      val1: '',
+      val2: '',
       arrow: faArrowsAltH
    }
 
    const [state, dispatch] = useReducer(UnitReducer, initialState);
 
-   const calcFarenheit = (celsiusVal) => {
-      if(celsiusVal === ''){
+   const calcFarenheit = (val1) => {
+      if(val1 === ''){
          dispatch({
             type: CALC_FARENHEIT,
             payload: {
@@ -34,16 +32,16 @@ const UnitState = props => {
          dispatch({
             type: CALC_FARENHEIT,
             payload: {
-               farenheit: ((celsiusVal * 9 / 5) + 32).toString(),
-               celsius: celsiusVal,
+               farenheit: ((val1 * 9 / 5) + 32).toString(),
+               celsius: val1,
                arrow: faArrowRight
             }
          })
       }
    }
 
-   const calcCelsius = (farenheitVal) => {
-      if(farenheitVal === ''){
+   const calcCelsius = (val2) => {
+      if(val2 === ''){
          dispatch({
             type: CALC_CELSIUS,
             payload: {
@@ -56,43 +54,63 @@ const UnitState = props => {
          dispatch({
             type: CALC_CELSIUS,
             payload: {
-               farenheit: farenheitVal,
-               celsius: ((farenheitVal - 32) * 5 / 9).toString(),
+               farenheit: val2,
+               celsius: ((val2 - 32) * 5 / 9).toString(),
                arrow: faArrowLeft
             }
          })
       }
    }
 
-   const calcLbs = (kgVal) => {
-      dispatch({
-         type: CALC_LBS,
-         payload: {
-            kg: kgVal,
-            lbs: (kgVal * 2.20462).toString(),
-            arrow: faArrowLeft
-         }
-      })
+   const calcLbs = (val1) => {
+      if(val1 === ''){
+         dispatch({
+            type: CALC_LBS,
+            payload: {
+               lbs: '',
+               kg: '',
+               arrow: faArrowsAltH
+            }
+         })
+      } else {
+         dispatch({
+            type: CALC_LBS,
+            payload: {
+               kg: val1,
+               lbs: (val1 * 2.20462).toString(),
+               arrow: faArrowRight
+            }
+         })
+      }
    }
 
-   const calcKg = (lbsVal) => {
-      dispatch({
-         type: CALC_KG,
-         payload: {
-            lbs: lbsVal,
-            kg: (lbsVal / 2.20462).toString(),
-            arrow: faArrowLeft
-         }
-      })
+   const calcKg = (val2) => {
+      if(val2 === ''){
+         dispatch({
+            type: CALC_KG,
+            payload: {
+               lbs: '',
+               kg: '',
+               arrow: faArrowsAltH
+            }
+         })
+      } else {
+         dispatch({
+            type: CALC_KG,
+            payload: {
+               lbs: val2,
+               kg: (val2 / 2.20462).toString(),
+               arrow: faArrowLeft
+            }
+         })
+      }
    }
 
    return <UnitContext.Provider
       value={{
-         celsiusVal: state.celsiusVal,
-         farenheitVal: state.farenheitVal,
          arrow: state.arrow,
-         kgVal: state.kgVal,
-         lbsVal: state.lbsVal,
+         val1: state.val1,
+         val2: state.val2,
          calcCelsius,
          calcFarenheit,
          calcLbs,
