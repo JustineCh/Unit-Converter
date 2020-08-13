@@ -6,11 +6,9 @@ import Weight from './components/pages/Weight';
 import Currency from './components/pages/Currency';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
-import UnitState from './context/unit/UnitState';
 
 function App() {
   return (
-    <UnitState>
       <Router>
         <div className="card card-container">
           <Switch>
@@ -21,7 +19,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </UnitState>
   );
 }
 
