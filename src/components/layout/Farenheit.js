@@ -1,12 +1,8 @@
-import React, {useContext} from 'react';
-import Unit from '../layout/Unit';
-import UnitContext from '../../context/unit/unitContext';
+import React from 'react';
+import ValueWithLabel from '../layout/ValueWithLabel';
 
-function Farenheit() {
-  const unitContext = useContext(UnitContext);
-  const {val2} = unitContext;
-  
-  return <Unit inputType={'farenheit'} value={val2}/>
+function Farenheit({value, onChange}) {
+   return <ValueWithLabel val={value} onChange={onChange} label={'Farenheit'}/>
 }
 
 export default Farenheit;
