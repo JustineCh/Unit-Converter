@@ -3,7 +3,7 @@ import TwoInputConverter from "../layout/TwoInputConverter";
 import Celsius from "../layout/Celsius";
 import Farenheit from "../layout/Farenheit";
 
-function FarenheitToCelsiusConverter() {
+function FarenheitCelsiusConverter() {
    const formula1to2 = (x) => ((x * 9 / 5) + 32);
    const formula2to1 = (x) => ((x - 32) * 5 / 9);
  
@@ -14,4 +14,4 @@ function FarenheitToCelsiusConverter() {
    )
  }
 
- export default FarenheitToCelsiusConverter;
+ export default FarenheitCelsiusConverter;

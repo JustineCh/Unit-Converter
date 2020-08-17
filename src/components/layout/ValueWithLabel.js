@@ -1,9 +1,9 @@
 import React, { Fragment} from "react";
 
-function ValueWithLabel({val, onChange, label}) {
+function ValueWithLabel({val, onChange, label, colorClassName}) {
    return (
       <Fragment>
-        <label className="btn-unit btn-primary-color">{label}</label>
+        <label className={"btn-label " + colorClassName}>{label}</label>
         <input value={val} onChange={onChange} />
       </Fragment>
     );
