@@ -133,7 +133,18 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
 
+.input {
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
+  padding: 0.25rem;
+  width: 13rem
+}
+
+select {
+  margin-right: 0.5rem;
 }
 
 .desktop-view-arrow {
@@ -152,7 +163,7 @@ body {
   }
 
   .btn-label {
-    padding: 8px 75px;
+    padding: 0.4rem 4.8rem;
     margin: 0px 0px 5px 0px;
   }
 
