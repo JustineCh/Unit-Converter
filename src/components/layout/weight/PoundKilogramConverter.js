@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
-import TwoInputConverter from "../layout/TwoInputConverter";
-import Kilogram from "../layout/Kilogram";
-import Pound from "../layout/Pound";
+import TwoInputConverter from "../TwoInputConverter";
+import Kilogram from "../weight/Kilogram";
+import Pound from "../weight/Pound";
 
 function PoundKilogramConverter() {
    const formula1to2 = (x) => (x * 2.2046226218);

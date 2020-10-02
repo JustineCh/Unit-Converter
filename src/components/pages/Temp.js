@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import Navbar from '../layout/Navbar';
-import FarenheitCelsiusConverter from '../converters/FarenheitCelsiusConverter';
+import FarenheitCelsiusConverter from '../layout/temperature/FarenheitCelsiusConverter';
 
 function Temp() {
    return (

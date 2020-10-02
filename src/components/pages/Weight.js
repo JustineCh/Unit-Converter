@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import Navbar from '../layout/Navbar';
-import PoundKilogramConverter from '../converters/PoundKilogramConverter';
+import PoundKilogramConverter from '../layout/weight/PoundKilogramConverter';
 
 function Weight() {
    return (

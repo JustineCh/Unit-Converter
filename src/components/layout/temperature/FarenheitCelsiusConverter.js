@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import TwoInputConverter from "../layout/TwoInputConverter";
-import Celsius from "../layout/Celsius";
-import Farenheit from "../layout/Farenheit";
+import TwoInputConverter from "../TwoInputConverter";
+import Celsius from "../temperature/Celsius";
+import Farenheit from "../temperature/Farenheit";
 
 function FarenheitCelsiusConverter() {
    const formula1to2 = (x) => ((x * 9 / 5) + 32);

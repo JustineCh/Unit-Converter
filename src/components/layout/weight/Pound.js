@@ -1,5 +1,5 @@
 import React from 'react';
-import ValueWithLabel from '../layout/ValueWithLabel';
+import ValueWithLabel from '../ValueWithLabel';
 
 
 function Pound({value, onChange}) {
